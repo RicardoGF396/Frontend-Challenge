@@ -123,7 +123,7 @@ function Content() {
     setDeskM(desk * deskVal);
     setWardrobeM(wardrobe * wardrobeVal);
 
-    setSubtotal(totalm * 200);
+    setSubtotal(parseFloat(totalm * 200));
     setTax(parseFloat((subtotal * 0.16).toFixed(2)));
     setTotal(subtotal + tax);
     setDue(total * 0.5);
