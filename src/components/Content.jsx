@@ -62,6 +62,7 @@ function Content() {
   const [total, setTotal] = useState(0);
   const [due, setDue] = useState(0);
 
+
   /* Reset data function */
   const clear = () => {
     setBed(0);
@@ -122,11 +123,18 @@ function Content() {
     setDiningM(dining * diningVal);
     setDeskM(desk * deskVal);
     setWardrobeM(wardrobe * wardrobeVal);
+    
+    /* Summary Props */
 
-    setSubtotal(parseFloat(totalm * 200));
-    setTax(parseFloat((subtotal * 0.16).toFixed(2)));
-    setTotal(subtotal + tax);
-    setDue(total * 0.5);
+    /* Fixed Values */
+    const subtotalFixed = (totalm * 200).toFixed(2)
+    const taxFixed = parseFloat((subtotal * 0.16).toFixed(2))
+    const totalFixed = parseFloat(subtotal + tax).toFixed(2)
+    const dueFixed = (total * 0.5).toFixed(2)
+    setSubtotal(subtotalFixed);
+    setTax(taxFixed);
+    setTotal(totalFixed);
+    setDue(dueFixed);
   }, [
     bed,
     refrigerador,
